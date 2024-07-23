@@ -3,9 +3,14 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:weather/screens/upcomingforecast.dart';
 
 class WeatherPage extends StatelessWidget {
   const WeatherPage({super.key});
+  void _navigatetonextscreen(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const SevenDays()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,8 +50,8 @@ class WeatherPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset("assets/Weather/file.png",scale: 7.r,),
-                      Text("Minsk",style: TextStyle(color: Colors.white,fontSize: 30.sp,fontWeight: FontWeight.bold),)
+                      Image.asset("assets/Weather/file.png",scale: 8.5.r,),
+                      Text("Minsk",style: TextStyle(color: Colors.white,fontSize: 20.sp,fontWeight: FontWeight.bold),)
                     ],
                   ),
                   SizedBox(
@@ -54,8 +59,8 @@ class WeatherPage extends StatelessWidget {
                   ),
                   //UPDATING
                   Container(
-                    height: 30.h,
-                    width: 100.w,
+                    height: 25.h,
+                    width: 90.w,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
                       border: const Border(
@@ -82,7 +87,7 @@ class WeatherPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                          Container(
-                          width: 7.0.w,
+                          width: 5.0.w,
                           height: 7.0.h,
                           decoration: const BoxDecoration(
                               shape: BoxShape.circle,
@@ -92,30 +97,30 @@ class WeatherPage extends StatelessWidget {
                          const SizedBox(
                            width: 10,
                          ),
-                         Text("Updating",style: TextStyle(color: Colors.white,fontSize: 15.sp),)
+                         Text("Updating",style: TextStyle(color: Colors.white,fontSize: 12.5.sp),)
                       ],
                     ),
                   ),
-                  Image.asset("assets/Weather/rainy.png",scale: 1.5.r,),
+                  Flexible(child: Image.asset("assets/Weather/rainy.png",scale: 1.0.r,)),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("23",style: TextStyle(color: Colors.white,fontSize: 80.sp,fontWeight: FontWeight.w800),),
-                      Text("°",style: TextStyle(color: Colors.grey,fontSize: 50.sp,fontWeight: FontWeight.w900),),
+                      Text("23",style: TextStyle(color: Colors.white,fontSize: 70.sp,fontWeight: FontWeight.w800),),
+                      Text("°",style: TextStyle(color: Colors.grey,fontSize: 40.sp,fontWeight: FontWeight.w900),),
                     ],
                   ),
-                  Text("Thunderclouds",style: TextStyle(color: Colors.grey,fontSize: 25.sp,fontWeight: FontWeight.w600),),
-                  SizedBox(height: 20.h,),
+                  Text("Thunderclouds",style: TextStyle(color: Colors.grey,fontSize: 20.sp,fontWeight: FontWeight.w600),),
+                  SizedBox(height: 10.h,),
                   Container(
-                    height: 75.h,
-                    width: 300.w,
+                    height: 68.2.h,
+                    width: 325.w,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
                       color: const Color(0xff1f2227),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding:  EdgeInsets.fromLTRB(10.w, 8.h,10.w,8.h ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -126,8 +131,8 @@ class WeatherPage extends StatelessWidget {
                             children: [
                               Image.asset("assets/Weather/winds.png",scale: 15.r,),
                               SizedBox(height: 5.h,),
-                              Text("13 km/h",style: TextStyle(color: Colors.white,fontSize: 15.sp,fontWeight: FontWeight.bold),),
-                              Text("Wind",style: TextStyle(color: Colors.grey,fontSize: 15.sp,fontWeight: FontWeight.w400),)
+                              Text("13 km/h",style: TextStyle(color: Colors.white,fontSize: 12.5.sp,fontWeight: FontWeight.bold),),
+                              Text("Wind",style: TextStyle(color: Colors.grey,fontSize: 10.sp,fontWeight: FontWeight.w400),)
                             ],
                           ),
                           const Padding(
@@ -141,8 +146,8 @@ class WeatherPage extends StatelessWidget {
                             children: [
                               Image.asset("assets/Weather/drops.png",scale: 15.r,),
                               SizedBox(height: 5.h,),
-                              Text("27 %",style: TextStyle(color: Colors.white,fontSize: 15.sp,fontWeight: FontWeight.bold),),
-                              Text("Humidity",style: TextStyle(color: Colors.grey,fontSize: 15.sp,fontWeight: FontWeight.w400),)
+                              Text("27 %",style: TextStyle(color: Colors.white,fontSize: 12.5.sp,fontWeight: FontWeight.bold),),
+                              Text("Humidity",style: TextStyle(color: Colors.grey,fontSize: 10.sp,fontWeight: FontWeight.w400),)
                             ],
                           ),
                           const Padding(
@@ -154,10 +159,10 @@ class WeatherPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Image.asset("assets/Weather/drops.png",scale: 15.r,),
+                              Image.asset("assets/Weather/rainy.png",scale: 15.r,),
                               SizedBox(height: 5.h,),
-                              Text("87 %",style: TextStyle(color: Colors.white,fontSize: 15.sp,fontWeight: FontWeight.bold),),
-                              Text("Rain",style: TextStyle(color: Colors.grey,fontSize: 15.sp,fontWeight: FontWeight.w400),)
+                              Text("87 %",style: TextStyle(color: Colors.white,fontSize: 12.5.sp,fontWeight: FontWeight.bold),),
+                              Text("Rain",style: TextStyle(color: Colors.grey,fontSize: 10.sp,fontWeight: FontWeight.w400),)
                             ],
                           ),
                         ],
@@ -170,17 +175,174 @@ class WeatherPage extends StatelessWidget {
                     children: [
                       Text("Today",style: TextStyle(color: Colors.white,fontSize: 20.sp,fontWeight: FontWeight.bold),),
                       TextButton(
-                          onPressed: (){},
+                          onPressed: (){ _navigatetonextscreen(context);},
                           child: Text("7 Days >",style: TextStyle(color: Colors.white,fontSize: 17.5.sp,fontWeight: FontWeight.bold),))
                     ],
                   ),
-                  ListView(
+                  SizedBox(height: 10.h,),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 95.w,
+                          height: 120.h,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(40),
+                            color: Colors.white10,
+                          ),
+                          child: Column(
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.fromLTRB(
+                                    20, 20, 20, 20),
+                                child: Text("22°C",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight
+                                          .bold),),
+                              ),
+                              SizedBox(height: 6.h,),
+                              Image.asset(
+                                'assets/Weather/thunder.png',
+                                scale: 9.r,),
+                              SizedBox(height: 10.h,),
+                              const Text(
+                                "11:00", style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500),)
+                            ],
+                          ),
+                        ),
+                        SizedBox(width: 10.w,),
+                        Container(
+                          width:95.w,
+                          height: 120.h,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(40),
+                            color: Colors.white10,
+                          ),
+                          child: Column(
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.fromLTRB(
+                                    20, 20, 20, 20),
+                                child: Text("21 °C",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight
+                                          .bold),),),
+                              SizedBox(height: 6.h,),
+                              Image.asset(
+                                'assets/Weather/thunder.png',
+                                scale: 9.r,),
+                              SizedBox(height: 10.h,),
+                              const Text(
+                                "12:00", style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500),)
+                            ],
+                          ),
+                        ),
+                        SizedBox(width: 10.w,),
+                        Container(
+                          width: 95.w,
+                          height: 120.h,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(40),
+                            color: Colors.white10,
+                          ),
+                          child: Column(
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.fromLTRB(
+                                    20, 20, 20, 20),
+                                child: Text("20 °C",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight
+                                          .bold),),
+                              ),
+                              SizedBox(height: 6.h,),
+                              Image.asset(
+                                'assets/Weather/thunder.png',
+                                scale: 9.r,),
+                              SizedBox(height: 10.h,),
+                              const Text(
+                                "13:00", style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500),)
 
-                  )
+                            ],
+                          ),
+                        ),
+                        SizedBox(width: 10.w,),
+                        Container(
+                          width: 95.w,
+                          height: 120.h,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(40),
+                            color: Colors.white10,
+                          ),
+                          child: Column(
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.fromLTRB(
+                                    20, 20, 20, 20),
+                                child: Text("21 °C",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight
+                                          .bold),),),
+                              SizedBox(height: 6.h,),
+                              Image.asset(
+                                'assets/Weather/thunder.png',
+                                scale: 9.r,),
+                              SizedBox(height: 10.h,),
+                              const Text(
+                                "14:00", style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500),)
+                            ],
+                          ),
+                        ),
+                        SizedBox(width: 10.w,),
+                        Container(
+                          width: 95.w,
+                          height: 120.h,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(40),
+                            color: Colors.white10,
+                          ),
+                          child: Column(
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.fromLTRB(
+                                    20, 20, 20, 20),
+                                child: Text("21 °C",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight
+                                          .bold),),),
+                              SizedBox(height: 6.h,),
+                              Image.asset(
+                                'assets/Weather/thunder.png',
+                                scale: 9.r,),
+                              SizedBox(height: 10.h,),
+                              const Text(
+                                "15:00", style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500),)
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
 
                 ],
               ),
-
             ],
           )
         ),
